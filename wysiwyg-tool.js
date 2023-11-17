@@ -23,8 +23,22 @@ export class WysiwygTool extends WysiwygBase {
 
 			md-filled-text-field,
 			md-filled-select,
-			md-text-button {
+			md-text-button,
+			md-switch {
 				--md-sys-color-primary: var(--wysiwyg-tool-theme, #2A9AF2);
+			}
+
+			md-select-option {
+				--md-sys-color-secondary-container: rgba(42, 154, 242, 0.2);
+			}
+		
+			label:has(md-switch) {
+				line-height: 32px;
+				display: block;
+			}
+		
+			label > md-switch {
+				margin-left: 20px;
 			}
 
 			md-filled-text-field + md-filled-select,

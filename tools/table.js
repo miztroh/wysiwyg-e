@@ -115,19 +115,22 @@ class WysiwygToolTable extends WysiwygTool {
 				<div slot="content">
 					<md-filled-text-field id="rowCount" label="${this.localize('Rows')}" dialogInitialFocus required autoValidate type="number" min="1" value="1"></md-filled-text-field>
 					<md-filled-text-field id="columnCount" label="${this.localize('Columns')}" required autoValidate type="number" min="1" value="1"></md-filled-text-field>
-					<label>
-						${this.localize('Show Header')}
-						<md-switch id="showHeader"></md-switch>
-					</label>
-					<label>
-						${this.localize('Show Footer')}
-						<md-switch id="showFooter"></md-switch>
-					</label>
+					<div style="display: flex; flex-direction: row; margin-top: 20px;">
+						<label>
+							${this.localize('Show Header')}
+							<md-switch id="showHeader"></md-switch>
+						</label>
+						<div style="flex: 1;"></div>
+						<label>
+							${this.localize('Show Footer')}
+							<md-switch id="showFooter"></md-switch>
+						</label>
+					</div>
 				</div>				
 				<div slot="actions">
 					<div>
-						<div style="display: flex; flex-direction: row; justify-content: end;" ?hidden="${!this.selectedTable}">
-							<span style="line-height: 40px; padding: 0 20px; font-weight: bold;">${this.localize('Insert')}:</span>
+						<div style="font-weight: bold; text-align: center; margin-bottom: 10px;" ?hidden="${!this.selectedTable}">${this.localize('Insert')}:</div>
+						<div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap;" ?hidden="${!this.selectedTable}">
 							<md-text-button form="form" value="insertCellBefore">${this.localize('Cell Before')}</md-text-button>
 							<md-text-button form="form" value="insertCellAfter">${this.localize('Cell After')}</md-text-button>
 							<md-text-button form="form" value="insertRowBefore">${this.localize('Row Before')}</md-text-button>
@@ -135,13 +138,13 @@ class WysiwygToolTable extends WysiwygTool {
 							<md-text-button form="form" value="insertColumnBefore">${this.localize('Column Before')}</md-text-button>
 							<md-text-button form="form" value="insertColumnAfter">${this.localize('Column After')}</md-text-button>
 						</div>
-						<div style="display: flex; flex-direction: row; justify-content: end;" ?hidden="${!this.selectedTable}">
-							<span style="line-height: 40px; padding: 0 20px; font-weight: bold;">${this.localize('Delete')}:</span>
+						<div style="font-weight: bold; text-align: center; margin: 10px auto;" ?hidden="${!this.selectedTable}">${this.localize('Delete')}:</div>
+						<div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap;" ?hidden="${!this.selectedTable}">
 							<md-text-button form="form" value="deleteCell">${this.localize('Cell')}</md-text-button>
 							<md-text-button form="form" value="deleteRow">${this.localize('Row')}</md-text-button>
 							<md-text-button form="form" value="deleteColumn">${this.localize('Column')}</md-text-button>
 						</div>
-						<div style="display: flex; flex-direction: row; justify-content: end;">
+						<div style="display: flex; flex-direction: row; justify-content: end; margin-top: 20px;">
 							<md-text-button form="form" value="remove" ?hidden="${!this.selectedTable}">Remove</md-text-button>
 							<md-text-button form="form" value="save">Save</md-text-button>
 							<md-text-button form="form" value="cancel">Cancel</md-text-button>
