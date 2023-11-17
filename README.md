@@ -26,57 +26,61 @@
 * Headings
 * Blockquote
 
-## Usage
+## Demo
 
 <!--
 ```
 <custom-element-demo>
-	<template>
-		<script type="module" src="../wysiwyg-e.js"async></script>
-		<script type="module" src="../tools/bold.js" async></script>
-		<script type="module" src="../tools/italic.js" async></script>
-		<script type="module" src="../tools/underline.js" async></script>
-		<script type="module" src="../tools/strike.js" async></script>
-		<script type="module" src="../tools/color.js" async></script>
-		<script type="module" src="../tools/clear.js" async></script>
-		<script type="module" src="../tools/code.js" async></script>
-		<script type="module" src="../tools/table.js" async></script>
-		<script type="module" src="../tools/link.js" async></script>
-		<script type="module" src="../tools/image.js" async></script>
-		<script type="module" src="../tools/audio.js" async></script>
-		<script type="module" src="../tools/video.js" async></script>
-		<script type="module" src="../tools/ordered.js" async></script>
-		<script type="module" src="../tools/unordered.js" async></script>
-		<script type="module" src="../tools/indent.js" async></script>
-		<script type="module" src="../tools/outdent.js" async></script>
-		<script type="module" src="../tools/justify.js" async></script>
-		<script type="module" src="../tools/heading.js" async></script>
-		<script type="module" src="../tools/blockquote.js" async></script>
-		<wysiwyg-e style="width: 100vw; height: 100vh;" id="wysiwygE">
-			<wysiwyg-tool-bold></wysiwyg-tool-bold>
-			<wysiwyg-tool-italic></wysiwyg-tool-italic>
-			<wysiwyg-tool-underline></wysiwyg-tool-underline>
-			<wysiwyg-tool-strike></wysiwyg-tool-strike>
-			<wysiwyg-tool-color></wysiwyg-tool-color>
-			<wysiwyg-tool-clear></wysiwyg-tool-clear>
-			<wysiwyg-tool-code></wysiwyg-tool-code>
-			<wysiwyg-tool-table></wysiwyg-tool-table>
-			<wysiwyg-tool-link></wysiwyg-tool-link>
-			<wysiwyg-tool-image></wysiwyg-tool-image>
-			<wysiwyg-tool-audio></wysiwyg-tool-audio>
-			<wysiwyg-tool-video></wysiwyg-tool-video>
-			<wysiwyg-tool-ordered></wysiwyg-tool-ordered>
-			<wysiwyg-tool-unordered></wysiwyg-tool-unordered>
-			<wysiwyg-tool-indent></wysiwyg-tool-indent>
-			<wysiwyg-tool-outdent></wysiwyg-tool-outdent>
-			<wysiwyg-tool-justify></wysiwyg-tool-justify>
-			<wysiwyg-tool-heading></wysiwyg-tool-heading>
-			<wysiwyg-tool-blockquote></wysiwyg-tool-blockquote>
-		</wysiwyg-e>
-	</template>
+  <template>
+	<link href="/node_modules/@fontsource/material-symbols-outlined/index.css" rel="stylesheet">
+	<link href="/node_modules/@fontsource/roboto/400.css" rel="stylesheet">
+	<link href="/node_modules/@fontsource/roboto/700.css" rel="stylesheet">
+	<script type="module" src="./wysiwyg-e.js"></script>
+	<script type="module" src="./tools/bold.js"></script>
+	<script type="module" src="./tools/italic.js"></script>
+	<script type="module" src="./tools/underline.js"></script>
+	<script type="module" src="./tools/strike.js"></script>
+	<script type="module" src="./tools/color.js"></script>
+	<script type="module" src="./tools/clear.js"></script>
+	<script type="module" src="./tools/code.js"></script>
+	<script type="module" src="./tools/table.js"></script>
+	<script type="module" src="./tools/link.js"></script>
+	<script type="module" src="./tools/image.js"></script>
+	<script type="module" src="./tools/audio.js"></script>
+	<script type="module" src="./tools/video.js"></script>
+	<script type="module" src="./tools/ordered.js"></script>
+	<script type="module" src="./tools/unordered.js"></script>
+	<script type="module" src="./tools/indent.js"></script>
+	<script type="module" src="./tools/outdent.js"></script>
+	<script type="module" src="./tools/justify.js"></script>
+	<script type="module" src="./tools/heading.js"></script>
+	<script type="module" src="./tools/blockquote.js"></script>
+	<wysiwyg-e style="width: 100vw; height: 100vh;" id="wysiwygE">
+		<wysiwyg-tool-bold></wysiwyg-tool-bold>
+		<wysiwyg-tool-italic></wysiwyg-tool-italic>
+		<wysiwyg-tool-underline></wysiwyg-tool-underline>
+		<wysiwyg-tool-strike></wysiwyg-tool-strike>
+		<wysiwyg-tool-color></wysiwyg-tool-color>
+		<wysiwyg-tool-clear></wysiwyg-tool-clear>
+		<wysiwyg-tool-code></wysiwyg-tool-code>
+		<wysiwyg-tool-table></wysiwyg-tool-table>
+		<wysiwyg-tool-link></wysiwyg-tool-link>
+		<wysiwyg-tool-image></wysiwyg-tool-image>
+		<wysiwyg-tool-audio></wysiwyg-tool-audio>
+		<wysiwyg-tool-video></wysiwyg-tool-video>
+		<wysiwyg-tool-ordered></wysiwyg-tool-ordered>
+		<wysiwyg-tool-unordered></wysiwyg-tool-unordered>
+		<wysiwyg-tool-indent></wysiwyg-tool-indent>
+		<wysiwyg-tool-outdent></wysiwyg-tool-outdent>
+		<wysiwyg-tool-justify></wysiwyg-tool-justify>
+		<wysiwyg-tool-heading></wysiwyg-tool-heading>
+		<wysiwyg-tool-blockquote></wysiwyg-tool-blockquote>
+	</wysiwyg-e>
+  </template>
 </custom-element-demo>
 ```
 -->
+
 ```html
 <wysiwyg-e>
     <wysiwyg-tool-bold></wysiwyg-tool-bold>
