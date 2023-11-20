@@ -104,6 +104,10 @@ export class WysiwygE extends WysiwygBase {
 		if (props.has('canRedo') || props.has('canUndo') || props.has('value') || props.has('selection') || props.has('minWidth768px') || props.has('tooltipPosition') || props.has('forceNarrow') || props.has('language') || props.has('debug') || props.has('modifier')) {
 			this.updateTools();
 		}
+
+		if (props.has('value')) {
+			this.dispatchEvent(new CustomEvent('change', {composed: true, bubbles: true, detail: {old: props.get('value'), new: this.value}}));
+		}
 	}
 
 	constructor () {
