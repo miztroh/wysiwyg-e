@@ -7,7 +7,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
-import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './table.mjs';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES, SANITIZE } from './table.mjs';
 
 class WysiwygToolTable extends WysiwygTool {
 	constructor () {
@@ -479,60 +479,8 @@ class WysiwygToolTable extends WysiwygTool {
 		}
 	}
 
-	sanitize(node) {
-		var sanitized = super.sanitize(node);
-
-		if (node && node.tagName) {
-			var childNodes = Array.prototype.slice.call(node.childNodes);
-
-			switch (node.tagName) {
-				//Remove empty TABLE and invalid TABLE children
-				case 'TABLE':
-					var childNodes = Array.from(node.childNodes);
-
-					if (!childNodes.length) {
-						node.parentNode.removeChild(node);
-					} else {
-						for (j = 0; j < childNodes.length; j += 1) {
-							if (childNodes[j].tagName && !['THEAD', 'TBODY', 'TFOOT', 'CAPTION', 'COL', 'COLGROUP'].includes(childNodes[j].tagName)) {
-								node.outerHTML = node.innerHTML;
-								sanitized = false;
-							}
-						}
-					}
-
-					break;
-				//Remove empty THEAD, TBODY, TFOOT and invalid THEAD, TBODY, TFOOT children
-				case 'THEAD':
-				case 'TBODY':
-				case 'TFOOT':
-					var childNodes = Array.prototype.slice.call(node.childNodes);
-
-					if (!childNodes.length) {
-						node.parentNode.removeChild(node);
-					} else {
-						for (var j = 0; j < childNodes.length; j += 1) {
-							if (childNodes[j].tagName && childNodes[j].tagName !== 'TR') {
-								node.outerHTML = node.innerHTML;
-								sanitized = false;
-							}
-						}
-					}
-
-					break;
-				// Remove empty TR
-				case 'TR':
-					var childNodes = Array.prototype.slice.call(node.childNodes);
-
-					if (!childNodes.length) {
-						node.parentNode.removeChild(node);
-					}
-
-					break;
-			}
-		}
-
-		return sanitized;
+	sanitize (node) {
+		return SANITIZE(node);
 	}
 }
 

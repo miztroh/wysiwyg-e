@@ -3,7 +3,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
-import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './code.mjs';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES, SANITIZE } from './code.mjs';
 
 class WysiwygToolCode extends WysiwygTool {
 	constructor () {
@@ -65,23 +65,6 @@ class WysiwygToolCode extends WysiwygTool {
 		}
 	}
 
-	sanitize(node) {
-		var sanitized = super.sanitize(node);
-
-		if (node && node.tagName && node.tagName === 'CODE') {
-			var childNodes = Array.prototype.slice.call(node.childNodes);
-
-			for (var j = 0; j < childNodes.length; j += 1) {
-				if (childNodes[j].tagName === 'P') {
-					node.outerHTML = node.innerHTML;
-					sanitized = false;
-				}
-			}
-		}
-
-		return sanitized;
-	}
-
 	updated (props) {
 		super.updated();
 
@@ -101,6 +84,10 @@ class WysiwygToolCode extends WysiwygTool {
 			this.active = active;
 			this.disabled = !(this.selection && this.selection.range0);
 		}
+	}
+
+	sanitize (node) {
+		return SANITIZE(node);
 	}
 }
 

@@ -3,7 +3,7 @@ import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import { WysiwygTool } from '../wysiwyg-tool.js';
 import '../wysiwyg-tooltip.js';
-import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './bold.mjs';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES, SANITIZE } from './bold.mjs';
 
 class WysiwygToolBold extends WysiwygTool {
 	constructor () {
@@ -60,6 +60,10 @@ class WysiwygToolBold extends WysiwygTool {
 				this.disabled = !document.queryCommandEnabled('bold');
 			}
 		}
+	}
+
+	sanitize (node) {
+		return SANITIZE(node);
 	}
 }
 

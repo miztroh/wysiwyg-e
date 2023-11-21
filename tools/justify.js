@@ -7,7 +7,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
-import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './justify.mjs';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES, SANITIZE } from './justify.mjs';
 
 class WysiwygToolJustify extends WysiwygTool {
 	constructor () {
@@ -155,6 +155,10 @@ class WysiwygToolJustify extends WysiwygTool {
 				this.disabled = !(document.queryCommandEnabled('justifyLeft') || document.queryCommandEnabled('justifyRight') || document.queryCommandEnabled('justifyCenter') || document.queryCommandEnabled('justifyFull'));
 			}
 		}
+	}
+
+	sanitize (node) {
+		return SANITIZE(node);
 	}
 }
 

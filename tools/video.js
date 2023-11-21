@@ -6,7 +6,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
-import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './video.mjs';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES, SANITIZE } from './video.mjs';
 
 class WysiwygToolVideo extends WysiwygTool {
 	constructor () {
@@ -147,6 +147,10 @@ class WysiwygToolVideo extends WysiwygTool {
 				this.disabled = true;
 			}
 		}
+	}
+
+	sanitize (node) {
+		return SANITIZE(node);
 	}
 }
 

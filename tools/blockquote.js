@@ -3,7 +3,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
-import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './blockquote.mjs';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES, SANITIZE } from './blockquote.mjs';
 
 class WysiwygToolBlockquote extends WysiwygTool {
 	constructor () {
@@ -82,6 +82,10 @@ class WysiwygToolBlockquote extends WysiwygTool {
 			this.active = active;
 			this.disabled = !(this.selection && this.selection.range0);
 		}
+	}
+
+	sanitize (node) {
+		return SANITIZE(node);
 	}
 }
 

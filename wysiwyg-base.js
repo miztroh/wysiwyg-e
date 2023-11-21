@@ -267,10 +267,6 @@ export class WysiwygBase extends LitElement {
 		return localized;
 	}
 
-	sanitize(node) {
-		return true;
-	}
-
 	_calculateNodeOffset (node) {
 		var offset = 0;
 
