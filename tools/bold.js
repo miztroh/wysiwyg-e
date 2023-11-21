@@ -3,6 +3,7 @@ import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import { WysiwygTool } from '../wysiwyg-tool.js';
 import '../wysiwyg-tooltip.js';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './bold.mjs';
 
 class WysiwygToolBold extends WysiwygTool {
 	constructor () {
@@ -23,12 +24,9 @@ class WysiwygToolBold extends WysiwygTool {
 			}
 		};
 
-		this.allowedTagNames = ['B'];
-
-		this.replacementTagNames = {
-			'STRONG': 'B'
-		};
-
+		this.allowedStyleTypes = ALLOWED_STYLE_TYPES;
+		this.allowedTagNames = ALLOWED_TAG_NAMES;
+		this.replacementTagNames = REPLACEMENT_TAG_NAMES;
 		this.keys = {};
 		this.keys[`${this.modifier.key}+b`] = this.bold;
 	}

@@ -3,6 +3,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './code.mjs';
 
 class WysiwygToolCode extends WysiwygTool {
 	constructor () {
@@ -23,7 +24,9 @@ class WysiwygToolCode extends WysiwygTool {
 			}
 		};
 
-		this.allowedTagNames = ['CODE'];
+		this.allowedStyleTypes = ALLOWED_STYLE_TYPES;
+		this.allowedTagNames = ALLOWED_TAG_NAMES;
+		this.replacementTagNames = REPLACEMENT_TAG_NAMES;
 
 		this.keys = {
 			'shift+ctrl+k': this.code

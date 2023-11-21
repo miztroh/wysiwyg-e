@@ -3,6 +3,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './italic.mjs';
 
 class WysiwygToolItalic extends WysiwygTool {
 	constructor () {
@@ -23,11 +24,9 @@ class WysiwygToolItalic extends WysiwygTool {
 			}
 		};
 
-		this.allowedTagNames = ['I'];
-
-		this.replacementTagNames = {
-			'EM': 'I'
-		};
+		this.allowedStyleTypes = ALLOWED_STYLE_TYPES;
+		this.allowedTagNames = ALLOWED_TAG_NAMES;
+		this.replacementTagNames = REPLACEMENT_TAG_NAMES;
 
 		this.keys = {};
 		this.keys[`${this.modifier.key}+i`] = this.italic;

@@ -6,6 +6,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './audio.mjs';
 
 class WysiwygToolAudio extends WysiwygTool {
 	constructor () {
@@ -30,7 +31,9 @@ class WysiwygToolAudio extends WysiwygTool {
 			}
 		};
 
-		this.allowedTagNames = ['AUDIO-WRAPPER', 'AUDIO'];
+		this.allowedStyleTypes = ALLOWED_STYLE_TYPES;
+		this.allowedTagNames = ALLOWED_TAG_NAMES;
+		this.replacementTagNames = REPLACEMENT_TAG_NAMES;
 
 		this.keys = {
 			'shift+ctrl+s': this.openDialog

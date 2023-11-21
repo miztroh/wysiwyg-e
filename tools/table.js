@@ -7,6 +7,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './table.mjs';
 
 class WysiwygToolTable extends WysiwygTool {
 	constructor () {
@@ -87,7 +88,9 @@ class WysiwygToolTable extends WysiwygTool {
 			}
 		};
 
-		this.allowedTagNames = ['TABLE', 'THEAD', 'TBODY', 'TFOOT', 'CAPTION', 'COL', 'COLGROUP', 'TR', 'TH', 'TD'];
+		this.allowedStyleTypes = ALLOWED_STYLE_TYPES;
+		this.allowedTagNames = ALLOWED_TAG_NAMES;
+		this.replacementTagNames = REPLACEMENT_TAG_NAMES;
 
 		this.keys = {
 			'shift+ctrl+t': this.openDialog

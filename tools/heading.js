@@ -7,6 +7,7 @@ import { WysiwygTool } from '../wysiwyg-tool.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../wysiwyg-tooltip.js';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './heading.mjs';
 
 class WysiwygToolHeading extends WysiwygTool {
 	constructor () {
@@ -31,7 +32,9 @@ class WysiwygToolHeading extends WysiwygTool {
 			}
 		};
 
-		this.allowedTagNames = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
+		this.allowedStyleTypes = ALLOWED_STYLE_TYPES;
+		this.allowedTagNames = ALLOWED_TAG_NAMES;
+		this.replacementTagNames = REPLACEMENT_TAG_NAMES;
 
 		this.keys = {
 			'ctrl+0': () => {

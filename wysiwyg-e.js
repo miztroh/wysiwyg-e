@@ -3,6 +3,7 @@ import { WysiwygBase } from './wysiwyg-base.js';
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import { WysiwygTool } from './wysiwyg-tool.js';
+import { ALLOWED_STYLE_TYPES, ALLOWED_TAG_NAMES, REPLACEMENT_TAG_NAMES } from './wysiwyg-e.mjs';
 
 export class WysiwygE extends WysiwygBase {
 	keydown (e) {
@@ -113,8 +114,8 @@ export class WysiwygE extends WysiwygBase {
 	constructor () {
 		super();
 		this.activeState = 0;
-		this.allowedStyleTypes = [];
-		this.allowedTagNames = ['BR', 'P'];
+		this.allowedStyleTypes = ALLOWED_STYLE_TYPES;
+		this.allowedTagNames = ALLOWED_TAG_NAMES;
 		this.canScrollNext = false;
 		this.canScrollPrevious = false;
 
@@ -166,7 +167,7 @@ export class WysiwygE extends WysiwygBase {
 		this.noRedo = false;
 		this.noUndo = false;
 		this.placeholder = 'Edit your content here...';
-		this.replacementTagNames = {'DIV': 'P'};
+		this.replacementTagNames = REPLACEMENT_TAG_NAMES;
 
 		this.resources = {
 			'br': {
