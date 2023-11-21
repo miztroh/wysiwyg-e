@@ -8,8 +8,8 @@ export const SANITIZE = (node) => {
 	if (node && node.tagName && node.tagName === 'CODE') {
 		const childNodes = Array.from(node.childNodes);
 
-		for (const childNode of childNodes) {
-			if (childNodes.tagName === 'P') {
+		for (let childNode of childNodes) {
+			if (childNode.tagName === 'P') {
 				node.outerHTML = node.innerHTML;
 				sanitized = false;
 			}

@@ -14,8 +14,8 @@ export const SANITIZE = (node) => {
 				if (!childNodes.length) {
 					node.parentNode.removeChild(node);
 				} else {
-					for (const childNode of childNodes) {
-						if (childNodes.tagName && !['THEAD', 'TBODY', 'TFOOT', 'CAPTION', 'COL', 'COLGROUP'].includes(childNodes.tagName)) {
+					for (let childNode of childNodes) {
+						if (childNode.tagName && !['THEAD', 'TBODY', 'TFOOT', 'CAPTION', 'COL', 'COLGROUP'].includes(childNode.tagName)) {
 							node.outerHTML = node.innerHTML;
 							sanitized = false;
 						}
@@ -31,7 +31,7 @@ export const SANITIZE = (node) => {
 					node.parentNode.removeChild(node);
 				} else {
 					for (const childNode of childNodes) {
-						if (childNodes.tagName && childNodes.tagName !== 'TR') {
+						if (childNode.tagName && childNode.tagName !== 'TR') {
 							node.outerHTML = node.innerHTML;
 							sanitized = false;
 						}
