@@ -1,7 +1,7 @@
 {
 	"name": "wysiwyg-e",
 	"description": "A what-you-see-is-what-you-get editor web component created with Lit. Under the hood, it provides undo / redo history management, selection management, and a toolbar that accepts tools as child elements to provide editing functionality. All the included tools (see below for list) are accessible via both the toolbar buttons and keyboard shortcuts.",
-	"version": "5.3.3",
+	"version": "5.4.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/miztroh/wysiwyg-e.git"
@@ -12,12 +12,13 @@
 		"start": "web-dev-server --node-resolve --app-index demo/index.html --open"
 	},
 	"dependencies": {
-		"@fontsource/material-symbols-outlined": "^5.0.16",
-		"@fontsource/roboto": "^5.0.8",
-		"@material/web": "^1.0.1",
-		"lit": "^3.1.0"
+		"@fontsource/material-symbols-outlined": "^5.0.35",
+		"@fontsource/roboto": "^5.0.13",
+		"@material/web": "^1.5.1",
+		"lit": "^3.1.4"
 	},
 	"devDependencies": {
-		"@web/dev-server": "^0.4.1"
-	}
+		"@web/dev-server": "^0.4.6"
+	},
+	"packageManager": "yarn@4.3.1"
 }
